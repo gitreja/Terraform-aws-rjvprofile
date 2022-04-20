@@ -28,7 +28,7 @@ resource "aws_db_instance" "rjprofile-rds" {
   publicly_accessible = "false"
   skip_final_snapshot = "true"
   db_subnet_group_name = aws_db_subnet_group.rjprofile-rds-subgr.name
-  vpc_security_group_ids = aws_security_group.rjvprofile-prod-sg.id
+  vpc_security_group_ids = [aws_security_group.rjvprofile-prod-sg.id]
 }
 
 resource "aws_elasticache_cluster" "rjvprofile-cache" {
